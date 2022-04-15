@@ -15,7 +15,7 @@ Future main() async {
 }
 
 class MyApp extends StatelessWidget {
-  static final String title = 'Expansion Tile';
+  static final String title = 'FAQ';
 
   @override
   Widget build(BuildContext context) => MaterialApp(
@@ -36,40 +36,13 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        bottomNavigationBar: buildBottomBar(),
-        body: buildPages(),
+        body: buildPages(), //building the acutal page that it will show up on
       );
-
-  Widget buildBottomBar() {
-    final style = TextStyle(color: Colors.white);
-
-    return BottomNavigationBar(
-      backgroundColor: Theme.of(context).primaryColor,
-      selectedItemColor: Colors.white,
-      unselectedItemColor: Colors.white70,
-      currentIndex: index,
-      items: [
-        BottomNavigationBarItem(
-          icon: Text('ExpansionTile', style: style),
-          title: Text('Text'),
-        ),
-        BottomNavigationBarItem(
-          icon: Text('ExpansionTile', style: style),
-          title: Text('Basic'),
-        ),
-        BottomNavigationBarItem(
-          icon: Text('ExpansionTile', style: style),
-          title: Text('Advanced'),
-        ),
-      ],
-      onTap: (int index) => setState(() => this.index = index),
-    );
-  }
 
   Widget buildPages() {
     switch (index) {
       case 0:
-        return TextTilePage();
+        return BasicTilePage();
       case 1:
         return BasicTilePage();
       case 2:

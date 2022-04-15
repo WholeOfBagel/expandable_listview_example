@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:expandable_listview_example/main.dart';
 import 'package:expandable_listview_example/utils.dart';
 import 'package:flutter/material.dart';
@@ -48,7 +50,7 @@ class _TextTilePageState extends State<TextTilePage> {
                   children: [
                     GestureDetector(
                       onTap: () => isExpanded ? shrinkTile() : expandTile(),
-                      child: buildImage(),
+                      child: buildText(context),
                     ),
                     buildText(context),
                   ],
@@ -59,13 +61,6 @@ class _TextTilePageState extends State<TextTilePage> {
         ),
       );
 
-  Widget buildImage() => Image.network(
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80',
-        fit: BoxFit.cover,
-        width: double.infinity,
-        height: 400,
-      );
-
   Widget buildText(BuildContext context) => Theme(
         data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
         child: ExpansionTile(
@@ -73,12 +68,12 @@ class _TextTilePageState extends State<TextTilePage> {
           initiallyExpanded: isExpanded,
           childrenPadding: EdgeInsets.all(16).copyWith(top: 0),
           title: Text(
-            '👩 Sarah Pepperstone',
+            'Question about variant error',
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
           ),
           children: [
             Text(
-              'My name is Sarah and I am a New York City based Flutter developer. I help entrepreneurs & businesses figure out how to build scalable applications.\n\nWith over 7 years experience spanning across many industries from B2B to B2C, I live and breath Flutter.',
+              'oftentimes the variant is simply not in our database',
               style: TextStyle(fontSize: 18, height: 1.4),
             ),
           ],
@@ -90,3 +85,4 @@ class _TextTilePageState extends State<TextTilePage> {
         ),
       );
 }
+

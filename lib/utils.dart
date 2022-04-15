@@ -1,4 +1,6 @@
-import 'package:flushbar/flushbar.dart';
+import 'dart:math';
+
+import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 
 class Utils {

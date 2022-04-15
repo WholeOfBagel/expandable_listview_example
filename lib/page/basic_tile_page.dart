@@ -4,6 +4,8 @@ import 'package:expandable_listview_example/model/basic_tile.dart';
 import 'package:expandable_listview_example/utils.dart';
 import 'package:flutter/material.dart';
 
+import '../model/answer_tile.dart';
+
 class BasicTilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -13,13 +15,13 @@ class BasicTilePage extends StatelessWidget {
         ),
         body: ListView(
           children:
-              basicTiles.map((tile) => BasicTileWidget(tile: tile)).toList(),
+              answerTiles.map((tile) => BasicTileWidget(tile: tile)).toList(),
         ),
       );
 }
 
 class BasicTileWidget extends StatelessWidget {
-  final BasicTile tile;
+  final AnswerTile tile;
 
   const BasicTileWidget({
     Key key,
